@@ -31,7 +31,7 @@ public class ClienteController {
 
     // Buscar cliente por ID
     @GetMapping("/{id}")
-    public Cliente buscarPorId(@PathVariable Long id) {
+    public ClienteModel buscarPorId(@PathVariable Long id) {
 
         return service.buscarPorId(id)
                 .orElseThrow(() ->
@@ -40,9 +40,9 @@ public class ClienteController {
 
     // Atualizar cliente
     @PutMapping("/{id}")
-    public Cliente atualizar(
+    public ClienteModel atualizar(
             @PathVariable Long id,
-            @RequestBody Cliente cliente) {
+            @RequestBody ClienteModel cliente) {
 
         return service.atualizar(id, cliente);
     }

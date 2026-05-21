@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/nsei.iml" filepath="$PROJECT_DIR$/.idea/nsei.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nsei/nsei.iml" filepath="$PROJECT_DIR$/nsei/nsei.iml" />
     </modules>
   </component>
 </project>
