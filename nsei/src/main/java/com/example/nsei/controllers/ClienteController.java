@@ -17,19 +17,16 @@ public class ClienteController {
         this.service = service;
     }
 
-    // Criar cliente
     @PostMapping
     public ClienteModel salvar(@RequestBody ClienteModel cliente) {
         return service.salvar(cliente);
     }
 
-    // Listar todos clientes
     @GetMapping
     public List<ClienteModel> listarTodos() {
         return service.listarTodos();
     }
 
-    // Buscar cliente por ID
     @GetMapping("/{id}")
     public ClienteModel buscarPorId(@PathVariable Long id) {
 
@@ -38,7 +35,6 @@ public class ClienteController {
                         new RuntimeException("Cliente não encontrado"));
     }
 
-    // Atualizar cliente
     @PutMapping("/{id}")
     public ClienteModel atualizar(
             @PathVariable Long id,
@@ -47,7 +43,6 @@ public class ClienteController {
         return service.atualizar(id, cliente);
     }
 
-    // Deletar cliente
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id) {
         service.deletar(id);
