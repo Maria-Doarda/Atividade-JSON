@@ -1,6 +1,5 @@
 package com.example.nsei.models;
 
-import com.example.nsei.models.PedidoModel;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -15,8 +14,8 @@ public class ClienteModel{
 
     private String email;
 
-    @OneToMany(mappedBy = "cliente")
-    private List<PedidoModel> pedidos;
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private List<ProdutoModel> produtoModels;
 
     public ClienteModel() {
     }
@@ -34,9 +33,7 @@ public class ClienteModel{
         return email;
     }
 
-    public List<PedidoModel> getPedidos() {
-        return pedidos;
-    }
+
 
     public void setId(Long id) {
         this.id = id;
@@ -50,7 +47,11 @@ public class ClienteModel{
         this.email = email;
     }
 
-    public void setPedidos(List<PedidoModel> pedidos) {
-        this.pedidos = pedidos;
+    public List<ProdutoModel> getProdutoModels() {
+        return produtoModels;
+    }
+
+    public void setProdutoModels(List<ProdutoModel> produtoModels) {
+        this.produtoModels = produtoModels;
     }
 }
